@@ -1,0 +1,201 @@
+/* Variables */
+:root {
+    --primary-color: #4896eb;
+    --secondary-color: #01ff16;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --header-bg-color: #006ce000;
+    --hover-color: #0471ff;
+    --border-color: #dadada;
+    --modal-bg-color: rgba(0, 0, 0, 0.4);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em 0 0 0;
+    background-color: var(--header-bg-color);
+}
+
+nav ul li {
+    margin: 0.5em 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: var(--secondary-color);
+}
+
+main {
+    padding: 2em 1em;
+    max-width: 800px;
+    margin: auto;
+    background-color: var(--background-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+
+form label {
+    margin-top: 1em;
+    font-weight: bold;
+}
+
+form input, form button {
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-size: 1em;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+form button:hover {
+    background-color: var(--secondary-color);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1em;
+    font-size: 0.9em;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+}
+
+th, td {
+    padding: 0.75em;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+#additional-features label {
+    margin-top: 0.5em;
+}
+
+#additional-features input {
+    margin-top: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#players-list button, #injured-list button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 0.5em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#players-list button:hover, #injured-list button:hover {
+    background-color: var(--hover-color);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--modal-bg-color);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.modal-content button {
+    margin: 0 5px;
+}
+
+/* Media Queries */
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 1em;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    main {
+        padding: 2em;
+    }
+}
+
+@media (min-width: 900px) {
+    main {
+        padding: 3em;
+    }
+
+    form input, form button {
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Equipo de Fútbol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+    <header>
+        <h1>Administración de Equipo de Fútbol</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="register-player">Registrar Jugador</a></li>
+                <li><a href="#" id="registered-players">Jugadores Registrados</a></li>
+                <li><a href="#" id="injured-players">Jugadores Lesionados</a></li>
+                <li><a href="#" id="injured-history">Historial de Lesiones</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="register-section" class="active">
+            <h2>Registrar Jugador</h2>
+            <form id="player-form">
+                <label for="injured">Lesionado:</label>
+                <input type="checkbox" id="injured">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+                <label for="age">Edad:</label>
+                <input type="number" id="age" required>
+                <label for="position">Posición:</label>
+                <input type="text" id="position" required>
+                <div id="additional-features"></div>
+                <button type="submit">Registrar</button>
+            </form>
+            <form id="feature-form">
+                <label for="new-feature">Nueva Característica:</label>
+                <input type="text" id="new-feature">
+                <button type="button" id="add-feature">Agregar Característica</button>
+            </form>
+        </section>
+        <section id="registered-section">
+            <h2>Jugadores Registrados</h2>
+            <input type="text" id="search" placeholder="Buscar jugadores...">
+            <button id="export-csv">Exportar a CSV</button>
+            <table>
+                <thead id="players-header"></thead>
+                <tbody id="players-list"></tbody>
+            </table>
+        </section>
+        <section id="injured-section">
+            <h2>Jugadores Lesionados</h2>
+            <table>
+                <thead id="injured-header"></thead>
+                <tbody id="injured-list"></tbody>
+            </table>
+        </section>
+        <section id="injured-history-section">
+            <h2>Historial de Lesiones</h2>
+            <table>
+                <thead id="injured-history-header">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Posición</th>
+                        <th>Fecha de Lesión</th>
+                    </tr>
+                </thead>
+                <tbody id="injured-history-list"></tbody>
+            </table>
+        </section>
+    </main>
+    <div id="confirm-modal" class="modal" role="dialog" aria-labelledby="confirm-modal-label" aria-hidden="true">
+        <div class="modal-content">
+            <p id="confirm-modal-label">¿Estás seguro de que deseas eliminar este jugador?</p>
+            <button id="confirm-delete">Confirmar</button>
+            <button id="cancel-delete">Cancelar</button>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="script.js" async></script>
+</body>
+</html>
